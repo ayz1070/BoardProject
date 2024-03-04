@@ -10,6 +10,7 @@ import kr.co.lion.androidproject4boardapp.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
     lateinit var binding: FragmentLoginBinding
+    lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -17,7 +18,10 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater)
 
+        setData()
+        setEvent()
         setToolbar()
+
         return binding.root
     }
 
@@ -26,6 +30,17 @@ class LoginFragment : Fragment() {
             toolbarLogin.apply{
                 title = "로그인"
                 setNavigationIcon(R.drawable.arrow_back_24px)
+            }
+        }
+    }
+    fun setData(){
+        mainActivity = activity as MainActivity
+    }
+
+    fun setEvent(){
+        binding.apply{
+            buttonJoinLogin.setOnClickListener{
+                mainActivity.replaceFragment(FragmentNameMain.JOIN_FRAGMENT,false,true,null)
             }
         }
     }

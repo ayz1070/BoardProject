@@ -10,6 +10,7 @@ import kr.co.lion.androidproject4boardapp.databinding.FragmentJoinBinding
 class JoinFragment : Fragment() {
 
     lateinit var binding:FragmentJoinBinding
+    lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
 
@@ -17,8 +18,9 @@ class JoinFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentJoinBinding.inflate(inflater)
-
+        setData()
         setToolbar()
+        setEvent()
         return binding.root
     }
 
@@ -32,10 +34,18 @@ class JoinFragment : Fragment() {
     }
 
     fun setData(){
-
+        mainActivity = activity as MainActivity
     }
 
     fun initView(){
 
+    }
+
+    fun setEvent(){
+        binding.apply {
+            buttonNextJoin.setOnClickListener {
+                mainActivity.replaceFragment(FragmentNameMain.ADD_USER_INFO_FRAGMENT, false, true, null)
+            }
+        }
     }
 }

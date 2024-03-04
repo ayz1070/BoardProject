@@ -5,4 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity" >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerMain"
+        android:name="kr.co.lion.androidproject4boardapp.LoginFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
