@@ -6,16 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kr.co.lion.androidproject4boardapp.databinding.FragmentJoinBinding
-import kr.co.lion.androidproject4boardapp.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
-    lateinit var binding: FragmentLoginBinding
+class JoinFragment : Fragment() {
+
+    lateinit var binding:FragmentJoinBinding
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentLoginBinding.inflate(inflater)
+        binding = FragmentJoinBinding.inflate(inflater)
 
         setToolbar()
         return binding.root
@@ -23,11 +24,18 @@ class LoginFragment : Fragment() {
 
     fun setToolbar(){
         binding.apply{
-            toolbarLogin.apply{
-                title = "로그인"
+            toolbarJoin.apply{
+                title = "회원가입"
                 setNavigationIcon(R.drawable.arrow_back_24px)
             }
         }
     }
 
+    fun setData(){
+
+    }
+
+    fun initView(){
+
+    }
 }
